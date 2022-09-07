@@ -1,0 +1,37 @@
+import React, { FC } from 'react';
+import usePageService from '../../services/PageService';
+import Loader from '../../utils/Loader';
+import './Page.less';
+
+interface PageInterface {
+  apiAddress: string;
+}
+
+const Page: FC<PageInterface> = ({ apiAddress }) => {
+  const service = usePageService(apiAddress);
+
+  return (
+    <>
+      {service.status === 'loading' && <Loader />}
+      <div className="page-container">
+        {service.status === 'error' && <div> Error fetching! </div>}
+        {service.status === 'fetched' &&
+          (Object.keys(service.payLoad).length ? (
+            <div className="page-wrapper">
+              <h1 className="page-title">{service.payLoad.title.rendered}</h1>
+              <div
+                className="page-content"
+                dangerouslySetInnerHTML={{
+                  __html: service.payLoad.content.rendered
+                }}
+              />
+            </div>
+          ) : (
+            <div>Error</div>
+          ))}
+      </div>
+    </>
+  );
+};
+
+export default Page;
