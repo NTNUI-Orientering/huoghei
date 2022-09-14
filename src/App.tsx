@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/Navbar/Navbar';
 import Page from './components/Page/Page';
+import Post from './components/Posts/Post';
 import HomePage from './pages/Home/HomePage';
 import EntryPage from './pages/Entry/EntryPage';
 import { HH } from './CONSTS';
@@ -14,7 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/hjem" element={<HomePage />} />
-        
+
         <Route path="/innbydelse" element={<Page apiAddress={HH.getPageInnbydelsePath} />} />
         <Route path="/pm" element={<Page apiAddress={HH.getPagePmPath} />} />
         <Route path="/resultater" element={<Page apiAddress={HH.getPageResultaterPath} />} />
@@ -24,6 +25,8 @@ const App = () => {
           path="/pamelding/paameldte"
           element={<Page apiAddress={HH.getPagePaameldingPath} />}
         />
+
+        <Route path="/post/:id" element={<Post apiAddress={HH.getPostsPath} />} />
 
         <Route path="/snusk" element={<Page apiAddress={HH.getPageMerOmSnuskPath} />} />
         <Route path="/gamp" element={<Page apiAddress={HH.getPageMerOmGampPath} />} />

@@ -2,6 +2,7 @@ import React from 'react';
 import { PostInterface } from '../../types/News';
 import './NewsItem.less';
 import ntnuiIcon from '../../assets/images/ntnui_banner-60x60.png';
+import { Link } from 'react-router-dom';
 
 const NewsItem = (newsItem: PostInterface) => {
   return (
@@ -33,7 +34,14 @@ const NewsItem = (newsItem: PostInterface) => {
           }}
         />
 
-        {newsItem.content.rendered.length > 300 && <button>Les mer</button>}
+        {newsItem.content.rendered.length > 300 && (
+          <button>
+            <Link className="link" to={`/post/${newsItem.id}`}>
+              {' '}
+              Les mer{' '}
+            </Link>
+          </button>
+        )}
         <hr />
       </div>
     </div>

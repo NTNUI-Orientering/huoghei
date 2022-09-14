@@ -93,8 +93,6 @@ const Carousel: FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  console.log(state);
-
   return (
     <div className="carousel">
       <div className="slides">

@@ -290,13 +290,13 @@ const EntryPage: FC = () => {
                       </Form>
                     </div>
                     <div className="col">
-                      {options && new Date(options.paamelding_stenger) > new Date() &&(
+                      {options && new Date(options.paamelding_stenger) > new Date() && (
                         <div>
                           <h3>Påmelding stenger om: </h3>
-                          <CountDown endDateTime={options.paamelding_stenger} /> 
-                        </div>)
-                      }
-                      
+                          <CountDown endDateTime={options.paamelding_stenger} />
+                        </div>
+                      )}
+
                       <div className="payment-information">
                         <h4>Betalingsinformasjon</h4>
                         <h5>Snuskeløpet</h5>
