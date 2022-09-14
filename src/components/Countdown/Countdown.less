@@ -1,0 +1,45 @@
+@import (reference) "../../utils/Colors.less";
+
+.countdown-container {
+
+    .countdown-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;;
+        margin: auto;
+        .box {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: @huoghei-white;
+            margin: 8px;
+            font-size: xxx-large;
+
+            &.days {
+                background-color: @huoghei-ntnui-black;
+                
+            }
+            &.hours {
+                background-color: @huoghei-ntnui-green;
+            
+            }
+            &.minutes {
+                background-color: @huoghei-ntnui-yellow;
+                color: @huoghei-lightlightgrey;
+
+            }
+            &.seconds {
+                background-color: @huoghei-grey;
+            }
+
+            .text {
+                font-size: small;
+            }
+        }
+        
+    }
+}

@@ -8,7 +8,7 @@ const useFetchService = (pathToResource: string) => {
   });
 
   const fetchData = async (): Promise<void> => {
-    console.log('Fetch');
+    //console.log('Fetch');
     setResult({ status: 'loading' });
     fetch(HH.hostUrl + pathToResource)
       .then((response) => response.json())

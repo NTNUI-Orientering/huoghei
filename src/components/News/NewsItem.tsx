@@ -1,27 +1,40 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { PostInterface } from '../../types/News';
 import './NewsItem.less';
+import ntnuiIcon from '../../assets/images/ntnui_banner-60x60.png';
 
 const NewsItem = (newsItem: PostInterface) => {
-  useEffect(() => {
-    console.log('NI' + newsItem);
-  }, []);
-
   return (
     <div className="newsitem-container">
       <div className="newsitem-wrapper">
         <div className="title-div">
           <h2>{newsItem.title.rendered}</h2>
         </div>
+        <div className="top-row">
+          <div>
+            <span>
+              {newsItem.author === 8 && (
+                <span>
+                  {' '}
+                  <img alt="icon" src={ntnuiIcon} className="icon" /> NTNUI -{' '}
+                </span>
+              )}
+              Publisert: {new Date(newsItem.date).toLocaleDateString()}
+            </span>
+          </div>
+        </div>
         <div
+          className="content-div"
           dangerouslySetInnerHTML={{
             __html:
               newsItem.content.rendered.length > 300
                 ? newsItem.excerpt.rendered
                 : newsItem.content.rendered
           }}
-        ></div>
-        <div>{newsItem.date}</div>
+        />
+
+        {newsItem.content.rendered.length > 300 && <button>Les mer</button>}
+        <hr />
       </div>
     </div>
   );

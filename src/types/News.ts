@@ -33,6 +33,8 @@ interface Post {
   excerpt: PostExcerpt;
   date: string;
   id: number;
+  author: number;
+  status: string;
 }
 
 export type PostInterface = Post;

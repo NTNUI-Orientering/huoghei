@@ -1,15 +1,11 @@
 import React, { FC, useEffect, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import useFetchService from '../../services/FetchService';
 import PageLayout from '../PageLayout';
 import { HH } from '../../CONSTS';
 import Loader from '../../utils/Loader';
 import './EntryPage.less';
 import { Link } from 'react-router-dom';
-
-interface OptionsI {
-  [key: string]: string;
-}
+import { useOptionsContext } from '../../hooks/OptionsContext';
 
 interface FormValues {
   name: string;
@@ -28,21 +24,9 @@ interface FormErrors {
 }
 
 const EntryPage: FC = () => {
-  const [options, setOptions] = useState<OptionsI>();
-  const service = useFetchService(HH.getPaameldingOptions);
+  const { options, service } = useOptionsContext();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  useEffect(() => {
-    if (service.status === 'fetched') {
-      const opts = service.payLoad.reduce((map: Array<Array<OptionsI>>, obj) => {
-        map[obj.option_name] = obj.option_value;
-        return map;
-      }, {});
-
-      setOptions(opts);
-    }
-  }, [service.status]);
 
   useEffect(() => {
     //( Debug options )
@@ -146,9 +130,9 @@ const EntryPage: FC = () => {
   return (
     <PageLayout>
       <div>
-        {service.status === 'loading' && <Loader />}
-        {service.status === 'error' && <div>{JSON.stringify(service.error.message)}</div>}
-        {service.status === 'fetched' && (
+        {service?.status === 'loading' && <Loader />}
+        {service?.status === 'error' && <div>{JSON.stringify(service.error.message)}</div>}
+        {service?.status === 'fetched' && (
           <div className="entry-page">
             <h2>Påmelding Hu og Hei</h2>
             {/* options && JSON.stringify(options) */}

@@ -8,14 +8,11 @@ const useNewsService = (pathToResource: string) => {
   const [newsPage, setNewsPage] = useState(1);
 
   const fetchData = async (): Promise<void> => {
-    console.log('Fetch news');
     setIsLoading(true);
     await fetch(HH.hostUrl + pathToResource + '?page=' + newsPage)
       .then(async (response) => {
-        console.log('Fetched: ' + response.status);
-        //console.log(response.json());
         const posts = await response.json();
-        setNews([...news, posts][0]);
+        setNews([...news, ...posts]);
       })
       .catch((error) => {
         console.log('error', error);
@@ -24,11 +21,15 @@ const useNewsService = (pathToResource: string) => {
     setIsLoading(false);
   };
 
+  const loadMoreData = () => {
+    setNewsPage(newsPage + 1);
+  };
+
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [newsPage]);
 
-  return { news, isLoading, error, newsPage };
+  return { news, isLoading, error, newsPage, loadMoreData };
 };
 
 export default useNewsService;

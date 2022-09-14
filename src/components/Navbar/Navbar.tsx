@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.less';
 import logo from '../../assets/images/logo-ntnui-min.png';

@@ -12,8 +12,8 @@ const Page: FC<PageInterface> = ({ apiAddress }) => {
 
   return (
     <>
-      {service.status === 'loading' && <Loader />}
       <div className="page-container">
+        {service.status === 'loading' && <Loader />}
         {service.status === 'error' && <div> Error fetching! </div>}
         {service.status === 'fetched' &&
           (Object.keys(service.payLoad).length ? (
