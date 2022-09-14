@@ -8,6 +8,7 @@ module.exports = {
     entry: "./src/index.tsx",
     output: {
         path: __dirname + "/distribution/",
+        publicPath: "/"
     },
     module: {
         rules: [
@@ -32,6 +33,9 @@ module.exports = {
                 type: 'asset/resource'
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true,
     },
     devtool: prod ? undefined : "source-map",
     plugins: [
