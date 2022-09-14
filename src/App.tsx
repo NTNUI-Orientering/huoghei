@@ -14,8 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/hjem" element={<HomePage />} />
-        <Route path="/test" element={<Page apiAddress={HH.getPagePmPath} />} />
-
+        
         <Route path="/innbydelse" element={<Page apiAddress={HH.getPageInnbydelsePath} />} />
         <Route path="/pm" element={<Page apiAddress={HH.getPagePmPath} />} />
         <Route path="/resultater" element={<Page apiAddress={HH.getPageResultaterPath} />} />

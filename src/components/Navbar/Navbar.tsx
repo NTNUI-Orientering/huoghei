@@ -10,9 +10,6 @@ const NavBar: FC = () => {
         <Link to="/" className="element-logo">
           <img alt="logo" src={logo} className="logo" />
         </Link>
-        <Link to="/test" className="element">
-          TestSide
-        </Link>
         <Link to="/innbydelse" className="element">
           Innbydelse
         </Link>

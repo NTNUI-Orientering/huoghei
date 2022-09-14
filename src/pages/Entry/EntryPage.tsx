@@ -6,6 +6,7 @@ import Loader from '../../utils/Loader';
 import './EntryPage.less';
 import { Link } from 'react-router-dom';
 import { useOptionsContext } from '../../hooks/OptionsContext';
+import CountDown from '../../components/Countdown/Countdown';
 
 interface FormValues {
   name: string;
@@ -30,7 +31,7 @@ const EntryPage: FC = () => {
 
   useEffect(() => {
     //( Debug options )
-    console.log(options);
+    //console.log(options);
   }, [options]);
 
   const initialValues: FormValues = {
@@ -87,7 +88,7 @@ const EntryPage: FC = () => {
   };
 
   const onSubmit = async (values: FormValues) => {
-    console.log(values);
+    //console.log(values);
     setIsSubmitting(true);
     const urlParams = new URLSearchParams();
 
@@ -96,7 +97,7 @@ const EntryPage: FC = () => {
       const value = values[keyTyped];
       urlParams.append(key, String(value));
 
-      console.log(keyTyped, value);
+      //console.log(keyTyped, value);
     });
 
     const response = await fetch(HH.hostUrl + HH.registerRunner + '?' + urlParams, {
@@ -105,7 +106,7 @@ const EntryPage: FC = () => {
     });
 
     setIsSubmitting(false);
-    console.log(response);
+    //console.log(response);
     if (response.ok) {
       setIsSubmitted(true);
       return;
@@ -167,17 +168,17 @@ const EntryPage: FC = () => {
                 <Formik initialValues={initialValues} validate={validateValues} onSubmit={onSubmit}>
                   <div className="row">
                     <div className="col">
-                      <h4>
+                      <h3>
                         Påmeldingen til Hu og hei{' '}
                         {options ? getDate(options.paamelding_aapner).getFullYear() : ''} er nå
                         åpnet!
-                      </h4>
-                      <h5>
+                      </h3>
+                      <h4>
                         Påmeldingsfrist:{' '}
                         <span>
                           {options && getDate(options.paamelding_stenger).toLocaleDateString()}
                         </span>
-                      </h5>
+                      </h4>
                       <Form className="entry-form">
                         <label htmlFor="name">Navn</label>
                         <Field
@@ -289,6 +290,13 @@ const EntryPage: FC = () => {
                       </Form>
                     </div>
                     <div className="col">
+                      {options && new Date(options.paamelding_stenger) > new Date() &&(
+                        <div>
+                          <h3>Påmelding stenger om: </h3>
+                          <CountDown endDateTime={options.paamelding_stenger} /> 
+                        </div>)
+                      }
+                      
                       <div className="payment-information">
                         <h4>Betalingsinformasjon</h4>
                         <h5>Snuskeløpet</h5>
