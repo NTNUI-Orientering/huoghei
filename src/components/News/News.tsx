@@ -29,11 +29,13 @@ const News: FC = () => {
 
           {isLoading && news?.length && <Loader marginTop="sm" />}
 
-          <div className="button-container">
-            <button className="more-posts-button" onClick={getMoreNews}>
-              Last inn tidligere
-            </button>
-          </div>
+          {!isLoading && (
+            <div className="button-container">
+              <button className="more-posts-button" onClick={getMoreNews}>
+                Last inn tidligere
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>

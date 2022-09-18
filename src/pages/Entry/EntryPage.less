@@ -15,7 +15,7 @@
     .row {
         width: 100%;
         
-        @media only screen and (min-width: 1024px) {
+        @media only screen and (min-width: 720px) {
             &:after{ 
                 content: "";
                 display: table;
@@ -27,7 +27,7 @@
     .col{
         width:100%;
 
-        @media only screen and (min-width: 1024px) {
+        @media only screen and (min-width: 720px) {
             width: 50%;
             float: left
         }
@@ -104,15 +104,19 @@
         }
 
         button {
-            height: 32px;
+            height: 40px;
+            width: 120px;
+            
             padding: 4px 16px 4px 16px;
-            font-size: 14px;
-            font-weight: 600px;
+            font-size: 18px;
+            font-weight: 600;
             margin-top: 8px;
             margin-bottom: 16px;
-            background-color: @huoghei-white-background;
+            background-color: @huoghei-ntnui-green;
+            color: @huoghei-white;
             border: 1px solid #ccc;
             border-radius: 4px;
+            transition: all 0.2s ;
 
             &:hover, &:focus {
                 cursor: pointer;
@@ -120,6 +124,8 @@
                 background-color: #f8f8f8;
                 border: 1px solid @huoghei-light-blue;
                 box-shadow: 0 0 8px @huoghei-light-blue !important;
+                color: @huoghei-darkgrey;
+                transform: scale(1.02);
             }
             &:active {
                 transform: scale(0.98);
@@ -131,7 +137,7 @@
         background-color: #DDD;
         padding: 8px 16px 8px 16px;
         border-radius: 8px;
-        margin: 32px;
+        margin: 32px 16px 32px 16px;
         .list-group {
             background-color: @huoghei-darkwhite;
             margin-top: 0;

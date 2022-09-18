@@ -1,0 +1,58 @@
+@import (reference) "../../utils/Colors.less";
+
+.paameldte-container {
+    
+    .title {
+        display: flex;
+        justify-content: center;
+        color: @huoghei-grey;
+    }
+
+    table {
+        width: 100%;
+        align-self: center;
+        padding: 8px;
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 12px;
+    }
+    
+    th {
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center right;
+        text-align:left;
+        padding: 8px 18px 8px 4px;
+        background-color: #ccc;
+         
+
+        &.up {
+            background-image: url("../../assets/images/icons/up_arrow.png");
+        }
+        &.down {
+            background-image: url("../../assets/images/icons/down_arrow.png");
+        }
+        &.default {
+            background-image: url("../../assets/images/icons/default.png");
+        }
+    }
+
+    tr {
+        &:nth-child(n) td {
+            background-color: #eff0f0;
+        }
+        &:nth-child(2n) td {
+            background-color: #fff;
+        }
+    }
+
+    td {
+        padding: 4px;
+    }
+
+
+
+}

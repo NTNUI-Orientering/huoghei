@@ -135,7 +135,7 @@ const EntryPage: FC = () => {
         {service?.status === 'error' && <div>{JSON.stringify(service.error.message)}</div>}
         {service?.status === 'fetched' && (
           <div className="entry-page">
-            <h2>Påmelding Hu og Hei</h2>
+            <h1>Påmelding Hu og Hei</h1>
             {/* options && JSON.stringify(options) */}
             {!options && <div>Det har oppstått en feil.</div>}
 
@@ -287,6 +287,9 @@ const EntryPage: FC = () => {
                           {' '}
                           Meld på{' '}
                         </button>
+                        <p>
+                          Se <Link to="/pamelding/paameldte">listen</Link> over påmeldte deltakere.
+                        </p>
                       </Form>
                     </div>
                     <div className="col">

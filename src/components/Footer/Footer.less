@@ -1,0 +1,36 @@
+@import (reference) "../../utils/Colors.less";
+
+
+.footer {
+    width: 100%;
+    min-height: 48px;
+    height: fit-content;
+    background-color: @huoghei-grey;
+    color: white;
+
+    .quote {
+        width: clamp(300px, 80%, 1024px);
+        margin: 16px auto 0 auto;
+        padding-top: 8px;
+        text-align: center;
+        font-style: italic;
+    }
+
+    .info {
+        width: clamp(300px, 80%, 1024px);
+        margin: 12px auto 0 auto;
+        padding: 8px 0;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+#app-root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

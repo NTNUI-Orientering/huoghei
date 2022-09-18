@@ -14,7 +14,7 @@ import image10 from '../../assets/images/carousel/DSC07637-min.jpg';
 const slides = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10];
 const title = 'Hu og hei';
 const subtitle = 'Høstens tøffeste utfordring';
-const description = 'Foto: Gudmund Toverud Høglund';
+//const description = 'Foto: Gudmund Toverud Høglund';
 
 interface SlideI {
   slide: string;
@@ -40,7 +40,7 @@ const Slide: FC<SlideI> = ({ slide, offset }) => {
         <div className="slide-content-inner">
           <h2 className="slide-title">{title}</h2>
           <h3 className="slide-subtitle">{subtitle}</h3>
-          <p className="slide-description">{description}</p>
+          <p className="slide-description">{/*description*/}</p>
         </div>
       </div>
     </div>

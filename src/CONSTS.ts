@@ -35,6 +35,7 @@ export const HH = {
 
   // Rest API-routes
   getPaameldingOptions: '/wp-json/paamelding/v1/paameldingoptions',
+  getPaameldte: '/wp-json/paamelding/v1/paameldte',
   registerRunner: '/wp-json/paamelding/v1/paameldingregister',
 
   // Important variables
