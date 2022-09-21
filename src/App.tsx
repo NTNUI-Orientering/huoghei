@@ -9,11 +9,15 @@ import { HH } from './CONSTS';
 import './App.less';
 import EntriesPage from './pages/Entries/EntriesPage';
 import Footer from './components/Footer/Footer';
+import Navbar1 from './components/Navbar/Navbar1';
+import Navbar2 from './components/Navbar/Navbar2';
 
 const App = () => {
   return (
     <div className="app-container">
-      {<NavBar />}
+      {/*<NavBar />*/}
+      {/*<Navbar1/>*/}
+      {<Navbar2 />}
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/hjem" element={<HomePage />} />
