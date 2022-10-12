@@ -41,6 +41,7 @@ module.exports = {
     plugins: [
         new HtmlWebPackPlugin({
             template: "index.html",
+            favicon: "./src/assets/images/ntnui_banner-60x60.png",
         }),
         new MiniCssExtractPlugin(),
     ],

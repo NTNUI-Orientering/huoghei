@@ -39,10 +39,8 @@
     "webpack-dev-server": "^4.10.0"
   },
   "dependencies": {
-    "bootstrap": "5.0",
     "formik": "^2.2.9",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-grid-system": "^8.1.6",
     "react-router-dom": "^6.3.0"

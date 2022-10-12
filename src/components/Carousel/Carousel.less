@@ -18,6 +18,10 @@
     height: 40vw;
     box-sizing: border-box;
 
+    @media screen and ( max-width: 756px) {
+        height: 50vh;
+    }
+
     .slides {
         //margin:0;
         display: grid;
@@ -40,7 +44,7 @@
             top: 40%;
             transition: opacity 0.3s;
             opacity: 0.7;
-            z-index: 5;
+            z-index: 3;
             &:hover {
                 opacity: 1;
             }
@@ -68,6 +72,12 @@
         align-content:flex-end;
         transform-style: preserve-3d ;
         transform: perspective(1000px) translateX(calc(100% * var(--offset))) rotateY(calc(-45deg * var(--dir)/2));
+
+        @media screen and ( max-width: 756px) {
+            height: 60vw;
+            width: 84vw;
+
+        }
         
         .slide-content-inner {
             margin: 2rem;
@@ -84,6 +94,9 @@
                 letter-spacing: 0.2ch;
                 text-transform: uppercase;
                 margin: 0;
+                @media screen and ( max-width: 756px) {
+                    text-align: center;
+                }
             }
             .slide-subtitle {
                 font-size: 1.4rem;
