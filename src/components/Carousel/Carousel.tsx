@@ -18,8 +18,8 @@ const subtitle = 'Høstens tøffeste utfordring';
 
 const isSmallScreen = () => {
   //console.log(window.innerWidth)
-  return window.innerWidth < 756; 
-}
+  return window.innerWidth < 756;
+};
 
 interface SlideI {
   slide: string;
@@ -44,7 +44,7 @@ const Slide: FC<SlideI> = ({ slide, offset }) => {
       <div className="slide-content" style={stylesWrapper}>
         <div className="slide-content-inner">
           <h2 className="slide-title">{title}</h2>
-          {! isSmallScreen() && <h3 className="slide-subtitle">{subtitle}</h3>}
+          {!isSmallScreen() && <h3 className="slide-subtitle">{subtitle}</h3>}
           <p className="slide-description">{/*description*/}</p>
         </div>
       </div>
@@ -101,14 +101,18 @@ const Carousel: FC = () => {
   return (
     <div className="carousel">
       <div className="slides">
-       {!isSmallScreen() && <button onClick={() => dispatch({ type: StateActionKind.NEXT })}> ‹ </button>}
+        {!isSmallScreen() && (
+          <button onClick={() => dispatch({ type: StateActionKind.NEXT })}> ‹ </button>
+        )}
 
         {[...slides, ...slides, ...slides].map((slide, i) => {
           const offset = slides.length + (state.index - i);
           return <Slide slide={slide} offset={offset} key={i} />;
         })}
 
-        {!isSmallScreen() && <button onClick={() => dispatch({ type: StateActionKind.PREV })}> › </button>}
+        {!isSmallScreen() && (
+          <button onClick={() => dispatch({ type: StateActionKind.PREV })}> › </button>
+        )}
       </div>
     </div>
   );
