@@ -7,8 +7,8 @@ module.exports = {
     mode: prod ? "production" : "development",
     entry: "./src/index.tsx",
     output: {
-        path: __dirname + "/distribution/",
-        publicPath: "/"
+        path: __dirname + "/distribution",
+        publicPath: "/",
     },
     module: {
         rules: [
@@ -31,6 +31,7 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif)$/i,
                 type: 'asset/resource'
+                
             }
         ]
     },

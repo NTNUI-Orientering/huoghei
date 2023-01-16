@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="footer">
         <div className="quote">{quotes[Math.floor(Math.random() * 5)]}</div>
         <div className="info">
-          {'Fra webgruppa med <3 - Feil eller annet: ogruppa-www(at)list.stud.ntnu.no'}
+          {'<3 Webgruppa'}
         </div>
       </div>
     </footer>
