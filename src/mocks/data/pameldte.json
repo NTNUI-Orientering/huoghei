@@ -1,0 +1,24 @@
+[
+  {
+    "navn": "Testnavn Test",
+    "klubb": "NTNUI",
+    "klasse": "Herrer",
+    "antall": "0",
+    "snusk": "1",
+    "forhandsbetaling": "1",
+    "buss": "1",
+    "mat": "1",
+    "registrert": "2022-09-06 19:34:11"
+  },
+  {
+    "navn": "Testnavn Test2",
+    "klubb": "NTNUI",
+    "klasse": "Damer",
+    "antall": "3",
+    "snusk": "1",
+    "forhandsbetaling": "1",
+    "buss": "1",
+    "mat": "1",
+    "registrert": "2022-09-07 20:18:37"
+  }
+]

@@ -2,6 +2,7 @@ const prod = process.env.NODE_ENV === "production";
 
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 
 module.exports = {
     mode: prod ? "production" : "development",
@@ -37,6 +38,9 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
+        static: {
+            directory: path.join(__dirname, "/")
+        }
     },
     devtool: prod ? undefined : "source-map",
     plugins: [

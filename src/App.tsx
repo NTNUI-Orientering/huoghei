@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/resultater" element={<Page apiAddress={HH.getPageResultaterPath} />} />
 
         <Route path="/pamelding" element={<EntryPage />}></Route>
-        <Route path="/pamelding/paameldte" element={<EntriesPage />} />
+        <Route path="/pamelding/pameldte" element={<EntriesPage />} />
 
         <Route path="/post/:id" element={<Post apiAddress={HH.getPostsPath} />} />
 
