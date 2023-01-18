@@ -9,11 +9,15 @@ import { HH } from './CONSTS';
 import './App.less';
 import EntriesPage from './pages/Entries/EntriesPage';
 import Footer from './components/Footer/Footer';
+import Navbar3 from './components/Navbar/Navbar3';
 
 const App = () => {
   return (
     <div className="app-container">
-      {<NavBar />}
+      {/*<NavBar />*/}
+      {/*<Navbar1/>*/}
+      {/*<Navbar2 />*/}
+      {<Navbar3 />}
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/hjem" element={<HomePage />} />
@@ -23,7 +27,7 @@ const App = () => {
         <Route path="/resultater" element={<Page apiAddress={HH.getPageResultaterPath} />} />
 
         <Route path="/pamelding" element={<EntryPage />}></Route>
-        <Route path="/pamelding/paameldte" element={<EntriesPage />} />
+        <Route path="/pamelding/pameldte" element={<EntriesPage />} />
 
         <Route path="/post/:id" element={<Post apiAddress={HH.getPostsPath} />} />
 

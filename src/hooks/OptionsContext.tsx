@@ -9,7 +9,7 @@ interface OptionsI {
 
 interface OptionsContext {
   options: OptionsI | undefined;
-  service: Service<Array<any>> | undefined;
+  service: Service<Array<unknown>> | undefined;
 }
 
 const OptionsContext = createContext({} as OptionsContext);

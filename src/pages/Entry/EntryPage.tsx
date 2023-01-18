@@ -288,7 +288,7 @@ const EntryPage: FC = () => {
                           Meld på{' '}
                         </button>
                         <p>
-                          Se <Link to="/pamelding/paameldte">listen</Link> over påmeldte deltakere.
+                          Se <Link to="/pamelding/pameldte">listen</Link> over påmeldte deltakere.
                         </p>
                       </Form>
                     </div>
@@ -341,7 +341,7 @@ const EntryPage: FC = () => {
                   <p> Du er nå påmeldt. Takk for din registrering! </p>
                   <p>
                     {' '}
-                    Se <Link to="/pamelding/paameldte">listen</Link> over påmeldte deltakere.
+                    Se <Link to="/pamelding/pameldte">listen</Link> over påmeldte deltakere.
                   </p>
                 </div>
               )

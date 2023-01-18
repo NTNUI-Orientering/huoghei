@@ -15,7 +15,7 @@ const News: FC = () => {
 
   return (
     <div className="news-container">
-      {error && <div> Noe gikk galt </div>}
+      {error && <div> Noe gikk galt. </div>}
       {isLoading && !news?.length && <Loader marginTop="md" />}
       {news?.length > 0 && (
         <div>

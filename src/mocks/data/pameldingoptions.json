@@ -1,0 +1,34 @@
+[
+  {
+    "option_name": "paamelding_aapner",
+    "option_value": "2022-09-01"
+  },
+  {
+    "option_name": "paamelding_avgift_gamp",
+    "option_value": "200"
+  },
+  {
+    "option_name": "paamelding_avgift_gamp_arena",
+    "option_value": "250"
+  },
+  {
+    "option_name": "paamelding_avgift_gamp_etteranmelding",
+    "option_value": "300"
+  },
+  {
+    "option_name": "paamelding_avgift_snusk",
+    "option_value": "100"
+  },
+  {
+    "option_name": "paamelding_avgift_snusk_etteranmelding",
+    "option_value": "150"
+  },
+  {
+    "option_name": "paamelding_avgift_snusk_ettranmelding",
+    "option_value": "150"
+  },
+  {
+    "option_name": "paamelding_stenger",
+    "option_value": "2023-10-01"
+  }
+]

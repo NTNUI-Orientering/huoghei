@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1545,
+    "title": {
+      "rendered": "[MOCK] Tittel 1"
+    },
+    "author": 8,
+    "date": "2022-10-17T12:00:00",
+    "content": {
+      "rendered": "\n<p>[MOCK] Innhold content</p>\n"
+    },
+    "excerpt": {
+      "rendered": "\n<p>[MOCK] Innhold excerpt ...</p>\n"
+    },
+    "status": "publish"
+  },
+  {
+    "id": 1542,
+    "title": {
+      "rendered": "[MOCK] Tittel 2 En tittel"
+    },
+    "author": 8,
+    "date": "2022-10-15T12:00:00",
+    "content": {
+      "rendered": "\n<p>[MOCK] Innhold content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n"
+    },
+    "excerpt": {
+      "rendered": "\n<p>[MOCK] Innhold excerpt ...</p>\n"
+    },
+    "status": "publish"
+  },
+  {
+    "id": 1535,
+    "title": {
+      "rendered": "[MOCK] Tittel Another one"
+    },
+    "author": 5,
+    "date": "2022-10-14T12:00:00",
+    "content": {
+      "rendered": "\n<p>[MOCK] Innhold content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n"
+    },
+    "excerpt": {
+      "rendered": "\n<p>[MOCK] Innhold excerpt ...</p>\n"
+    },
+    "status": "publish"
+  },
+  {
+    "id": 1532,
+    "title": {
+      "rendered": "[MOCK] Tittel For runners"
+    },
+    "author": 2,
+    "date": "2022-10-12T12:00:00",
+    "content": {
+      "rendered": "\n<p>[MOCK] Innhold content</p>\n"
+    },
+    "excerpt": {
+      "rendered": "\n<p>[MOCK] Innhold excerpt ...</p>\n"
+    },
+    "status": "publish"
+  },
+  {
+    "id": 1519,
+    "title": {
+      "rendered": "[MOCK] Tittel So we do"
+    },
+    "author": 8,
+    "date": "2022-10-11T12:00:00",
+    "content": {
+      "rendered": "\n<p>[MOCK] Innhold content</p>\n"
+    },
+    "excerpt": {
+      "rendered": "\n<p>[MOCK] Innhold excerpt ...</p>\n"
+    },
+    "status": "publish"
+  }
+]
