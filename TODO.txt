@@ -1,5 +1,2 @@
-Etablere en static build folder for dev-server der blant annet assets, mockServiceWorker.js, index-filer og andre statiske filer legges. og oppdatere der det trengs i koden
-
-Treg bundle tid ved webpack dev server skyldes trolig at msw ikke har noen public mappe
 
 Implementere fullstendige options, inkludert løpsdato osv (må gjøres i backend også)
