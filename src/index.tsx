@@ -4,11 +4,14 @@ import { createRoot } from 'react-dom/client';
 import { OptionsContextProvider } from './hooks/OptionsContext';
 import App from './App';
 import './index.less';
-import { worker } from './mocks/browser';
+
 
 // Mock service worker for development
+console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV === 'development') {
+  const { worker } = require( './mocks/browser');
   worker.start();
+
 }
 
 const container = document.getElementById('app-root') as Element;

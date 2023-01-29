@@ -1,15 +1,15 @@
 import React, { FC, useReducer, CSSProperties, useEffect } from 'react';
 import './Carousel.less';
-import image1 from '../../assets/images/carousel/DSC07381-min.jpg';
-import image2 from '../../assets/images/carousel/DSC07385-min.jpg';
-import image3 from '../../assets/images/carousel/DSC07390-min.jpg';
-import image4 from '../../assets/images/carousel/DSC07394-min.jpg';
-import image5 from '../../assets/images/carousel/DSC07530-min.jpg';
-import image6 from '../../assets/images/carousel/DSC07545-min.jpg';
-import image7 from '../../assets/images/carousel/DSC07554-min.jpg';
-import image8 from '../../assets/images/carousel/DSC07563-min.jpg';
-import image9 from '../../assets/images/carousel/DSC07588-min.jpg';
-import image10 from '../../assets/images/carousel/DSC07637-min.jpg';
+import image2 from '../../assets/images/carousel/DSC07385-min.jpg?as=webp';
+import image1 from '../../assets/images/carousel/DSC07381-min.jpg?as=webp';
+import image3 from '../../assets/images/carousel/DSC07390-min.jpg?as=webp';
+import image4 from '../../assets/images/carousel/DSC07394-min.jpg?as=webp';
+import image5 from '../../assets/images/carousel/DSC07530-min.jpg?as=webp';
+import image6 from '../../assets/images/carousel/DSC07545-min.jpg?as=webp';
+import image7 from '../../assets/images/carousel/DSC07554-min.jpg?as=webp';
+import image8 from '../../assets/images/carousel/DSC07563-min.jpg?as=webp';
+import image9 from '../../assets/images/carousel/DSC07588-min.jpg?as=webp';
+import image10 from '../../assets/images/carousel/DSC07637-min.jpg?as=webp';
 
 const slides = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10];
 const title = 'Hu og hei';
