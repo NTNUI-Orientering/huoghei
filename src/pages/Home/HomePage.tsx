@@ -13,7 +13,7 @@ const HomePage: FC = () => {
     <>
       <Carousel />
       <PageLayout>
-        {options?.paamelding_stenger && <CountDown endDateTime={options?.paamelding_stenger} />}
+        {options?.paamelding_stenger && <CountDown endDateTime={options?.lopsdato} />}
         <News />
       </PageLayout>
     </>

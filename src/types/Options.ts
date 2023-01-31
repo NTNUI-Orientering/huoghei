@@ -1,6 +1,7 @@
 // Interface for the fetched options from backend:
 
 interface OptionsI {
+  lopsdato: string;
   paamelding_aapner: string;
   paamelding_avgift_gamp: string;
   paamelding_avgift_gamp_arena: string;

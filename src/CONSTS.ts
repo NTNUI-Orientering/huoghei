@@ -1,6 +1,8 @@
 export const HH = {
   hostUrl: 'https://org.ntnu.no/ogruppa/sportslig/arr/huoghei',
 
+  publicPath: process.env.NODE_ENV == "development" ? '' : '/ogruppa/hh',
+
   userRegisterPath: '/wp-json/wp/v2/users/register',
   userTokenPath: '/wp-json/jwt-auth/v1/token',
   userResetPasswordPath: '/wp-json/wp/v2/users/lost-password',
@@ -34,7 +36,7 @@ export const HH = {
   getPageSvommeFotterPath: '/wp-json/wp/v2/pages/938',
 
   // Rest API-routes
-  getPaameldingOptions: '/wp-json/paamelding/v1/paameldingoptions',
+  getOptions: '/wp-json/paamelding/v1/paameldingoptions',
   getPaameldte: '/wp-json/paamelding/v1/paameldte',
   registerRunner: '/wp-json/paamelding/v1/paameldingregister',
 
