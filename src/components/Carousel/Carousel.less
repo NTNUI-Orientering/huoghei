@@ -64,12 +64,12 @@
         width: 60vw;
         height: 30vw;
         background-size: cover;
-        background-position: center center;
+        //background-position: center center;
         background-repeat: no-repeat;
         transition: transform 0.5s ease-in-out;
         opacity: 0.7;
-        display: grid;
-        align-content:flex-end;
+        //display: grid;
+        //align-content:flex-end;
         transform-style: preserve-3d ;
         transform: perspective(1000px) translateX(calc(100% * var(--offset))) rotateY(calc(-45deg * var(--dir)/2));
 
@@ -79,7 +79,26 @@
 
         }
         
+        picture{
+            max-height: inherit;
+        }
+
+        .slide-image {
+            display: block;
+            overflow: hidden;
+            width: inherit;
+            height: inherit;
+            z-index: -3;
+            object-fit: cover;
+
+        }
+
+        
         .slide-content-inner {
+            float: left;
+            position: absolute;
+            left: 0;
+            bottom: 0;
             margin: 2rem;
             color: @huoghei-white;
             transform-style: preserve-3d;
@@ -123,14 +142,35 @@
         left: -10%;
         right: -10%;
         bottom: 0;
-        background-size: cover;
-        background-position: center center;
+        //background-size: cover;
+        //background-position: center center;
+        justify-content: center;
         z-index: -3;
         opacity: 0;
         transition: opacity 0.3s linear, transform 0.3s ease-in-out;
         pointer-events: none;
 
         transform: translateX(calc(10% * var(--dir)));
+        
+
+        .slide-image {
+            margin: auto;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+            z-index: -3;
+            object-fit: cover;
+
+            @media screen and ( max-width: 756px) {
+                height: 100%;
+                width:auto;
+                }
+
+        }
+        
     }
 
     .slide-container[data-active] {

@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 const prod = process.env.NODE_ENV == "production";
@@ -9,10 +9,12 @@ const prod = process.env.NODE_ENV == "production";
 module.exports = {
     
     mode: prod ? "production" : "development",
-    entry: "./src/index.tsx",
+    entry: {
+        index: "./src/index.tsx"
+    },
     output: {
+        filename: '[name].bundle.js',
         path: __dirname + "/distribution",
-        publicPath: "/",
     },
     devServer: {
         historyApiFallback: true,
@@ -40,10 +42,41 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpg|gif)$/i,
-                type: 'asset/resource'
-                
-            }
+                test: /\.(png|jpg|gif|webp)$/i,
+                oneOf: [
+                    {
+                        resourceQuery: /srcset/,
+                        use: [
+                            {
+                                loader: "webpack-image-srcset-loader",
+                                options: {
+                                    sizes: ["600w", "900w", "1200w", "1600w"],
+                                },
+                            },
+                            "file-loader",
+                            "webpack-image-resize-loader",
+                        ]
+                    },
+                    {
+                        resourceQuery: /width900/,
+                        use: [
+                            {
+                                loader: "webpack-image-srcset-loader",
+                                options: {
+                                    sizes: ["900w"],
+                                },
+                            },
+                            "file-loader",
+                            "webpack-image-resize-loader",
+                        ],
+                    },
+                    {
+                        use: {
+                            loader: 'file-loader',
+                        }
+                    }
+                ],                
+            },
         ]
     },
     plugins: [
@@ -52,28 +85,11 @@ module.exports = {
             favicon: "./public/ntnui_banner-60x60.png",
         }),
         new MiniCssExtractPlugin(),
+        new CopyPlugin({
+            patterns : [{
+                from: "./public/.htaccess"
+                }
+            ]
+        })
     ],
-    optimization: {
-        minimizer: [
-            new ImageMinimizerPlugin({
-                minimizer: {
-                    implementation: ImageMinimizerPlugin.imageminMinify,
-                    options: {
-                        plugins: [
-                           ['mozjpeg', { quality: 85 }  ],
-                        ]
-                    }
-                },
-                generator: [
-                    {
-                        preset: 'webp',
-                        implementation: ImageMinimizerPlugin.imageminGenerate,
-                        options: {
-                            plugins: ['imagemin-webp']
-                        }
-                    }
-                ]
-            })
-        ]
-    }
 };
