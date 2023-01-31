@@ -1,15 +1,15 @@
 import { rest } from 'msw';
 import { HH } from '../CONSTS';
 
-import pameldteOptions from './data/pameldingoptions.json';
+import options from './data/options.json';
 import pameldte from './data/pameldte.json';
 import posts from './data/posts.json';
 
 // Mocking handlers
 export const handlers = [
-  // GET Påmelding Options
-  rest.get(HH.hostUrl + HH.getPaameldingOptions, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(pameldteOptions));
+  // GET Options
+  rest.get(HH.hostUrl + HH.getOptions, (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(options));
   }),
 
   // GET Påmeldte deltakere handler

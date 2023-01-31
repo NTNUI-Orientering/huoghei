@@ -1,7 +1,11 @@
 [
   {
+    "option_name": "lopsdato",
+    "option_value": "2023-10-14"
+  },
+  {
     "option_name": "paamelding_aapner",
-    "option_value": "2022-09-01"
+    "option_value": "2023-09-01"
   },
   {
     "option_name": "paamelding_avgift_gamp",
@@ -29,6 +33,6 @@
   },
   {
     "option_name": "paamelding_stenger",
-    "option_value": "2023-10-01"
+    "option_value": "2023-10-12"
   }
 ]

@@ -24,7 +24,7 @@ const useOptionsContext = () => {
 
 const OptionsContextProvider = (props: { children: React.ReactNode }) => {
   const [options, setOptions] = useState<OptionsI>();
-  const service = useFetchService(HH.getPaameldingOptions);
+  const service = useFetchService(HH.getOptions);
 
   useEffect(() => {
     if (service.status === 'fetched') {
