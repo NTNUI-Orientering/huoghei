@@ -37,7 +37,7 @@ const NewsItem = (newsItem: PostInterface) => {
 
         {newsItem.content.rendered.length > 300 && (
           <button>
-            <Link className="link" to={HH.publicPath+`/post/${newsItem.id}`}>
+            <Link className="link" to={HH.publicPath + `/post/${newsItem.id}`}>
               {' '}
               Les mer{' '}
             </Link>

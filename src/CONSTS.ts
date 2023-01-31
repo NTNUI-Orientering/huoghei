@@ -1,7 +1,7 @@
 export const HH = {
   hostUrl: 'https://org.ntnu.no/ogruppa/sportslig/arr/huoghei',
 
-  publicPath: process.env.NODE_ENV == "development" ? '' : '/ogruppa/hh',
+  publicPath: process.env.NODE_ENV == 'development' ? '' : '/ogruppa/hh',
 
   userRegisterPath: '/wp-json/wp/v2/users/register',
   userTokenPath: '/wp-json/jwt-auth/v1/token',
