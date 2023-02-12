@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './Hamburger.less';
 
-const Hamburger = () => {
+interface HamburgerI {
+  open: boolean;
+}
+
+const Hamburger: FC<HamburgerI> = ({ open }) => {
   return (
     <>
-      <div className="hamburger">
+      <div className={open ? 'hamburger hamburger-open' : 'hamburger'}>
         <input className="hamburger-button" type="checkbox" />
         <div>
           <span className="burger burger1" />
@@ -16,4 +20,4 @@ const Hamburger = () => {
   );
 };
 
-export default Hamburger;
+export { Hamburger };

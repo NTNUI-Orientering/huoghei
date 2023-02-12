@@ -66,19 +66,26 @@
             .dropdown {
                 float: left;
                 overflow: hidden;
-    
-                &:hover{
+
+                &.dropdown-open {
+                    background-color: red;
                     color: @huoghei-white;
                     background-color: @huoghei-darkgrey;
+                    
+                    .drop-content {
+                        display: block;
+                    }
                 }
-    
-                &:hover .drop-content {
-                    display: block;
+                
+                @media (min-width: 767px) {
+                    &:hover .drop-content {
+                        display: block;
+                    }
+                    &:hover, .drop-button:active + .drop-content {
+                        display: block;
+                    }
                 }
 
-                &:hover, .drop-button:active + .drop-content {
-                    display: block;
-                }
     
                 .drop-button {
                     border: none;
@@ -100,6 +107,17 @@
                         transform: rotate(45deg);
                         -webkit-transform: rotate(45deg);
                       }
+                    
+                    .arrow-up {
+                        border: solid @huoghei-darkwhite;
+                        border-width: 0 2px 2px 0;
+                        display: inline-block;
+                        padding: 3px;
+                        margin-left: 6px;
+                        margin-bottom: 0px;
+                        transform: rotate(-135deg);
+                        -webkit-transform: rotate(-135deg);
+                    }
                 }
     
                 .drop-content {

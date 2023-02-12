@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import NavBar from './components/Navbar/Navbar';
 import Page from './components/Page/Page';
 import Post from './components/Posts/Post';
 import HomePage from './pages/Home/HomePage';
@@ -14,10 +13,7 @@ import Navbar3 from './components/Navbar/Navbar3';
 const App = () => {
   return (
     <div className="app-container">
-      {/*<NavBar />*/}
-      {/*<Navbar1/>*/}
-      {/*<Navbar2 />*/}
-      {<Navbar3 />}
+      <Navbar3 />
       <Routes>
         <Route path={HH.publicPath + '/'} element={<HomePage />}></Route>
         <Route path={HH.publicPath + '/hjem'} element={<HomePage />} />
