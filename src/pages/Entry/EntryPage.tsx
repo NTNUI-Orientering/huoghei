@@ -319,7 +319,7 @@ const EntryPage: FC = () => {
                             {options?.paamelding_avgift_gamp +
                               'kr (nettbank). Betales til kontonr: ' +
                               HH.kontonr +
-                              "(merk betalingen med 'Hu og Hei + navn')."}
+                              " (merk betalingen med 'Hu og Hei + navn')."}
                           </li>
                           <li className="list-group-item">
                             {'Kontant betaling: ' +
