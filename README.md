@@ -16,7 +16,7 @@ Påmeldingsunksjonaliteten i backend ligger som et custom-rest endepunkt som en 
 
 1. Gå inn i hu-og-hei-mappen fra terminalen
 2. Installer avhengighetenetil prosjektet: `npm install`
-3. Spinn opp applikasjonen: `npm run start`
+3. Spinn opp applikasjonen: `npm run dev:mock` for mocket backend og `npm run dev:prod` for reell backend 
 4. Applikasjonen skal nå kjøre på port "localhost:3000"
 
 
