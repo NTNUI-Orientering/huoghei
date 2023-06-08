@@ -166,7 +166,7 @@ const Navbar3 = () => {
             <Link to={HH.publicPath + '/'} className="element-logo" onClick={toggleHamburger}>
               <img alt="logo" src={logo} className="logo" />
             </Link>
-            <a href="www.sweco.no" className="sweco-logo">
+            <a href="https://www.sweco.no" className="sweco-logo">
               <img
                 alt="Sweco sponsor logo"
                 src={sweco}
