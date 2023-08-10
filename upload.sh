@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-HOST="login.domeneshop.no"
-USER="huoghei"
+source .env
 
 if [ ! -d "./distribution" ]
 then
@@ -9,12 +8,18 @@ then
     exit 1
 fi
 
-echo "Input ssh password"
-read -s PASSWD
+if [ -f ".env.local" ]
+then
+    source .env.local
+    echo $ADDR
+else
+    echo "Input ssh password"
+    read -s PASSWD
+fi
+
 echo "Logging in..."
 echo "Uploading folder distribution to the huoghei server at domeneshop"
 
-sshpass -p "$PASSWD" rsync -avhP ./distribution "$USER"@"$HOST":./hh --delete
+sshpass -p "$PASSWD" rsync -avhP ./distribution "$ADDR":"$DEST_FOLDER" --delete
 
-echo "Files uploaded"
 exit 0
