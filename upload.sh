@@ -11,7 +11,6 @@ fi
 if [ -f ".env.local" ]
 then
     source .env.local
-    echo $ADDR
 else
     echo "Input ssh password"
     read -s PASSWD
