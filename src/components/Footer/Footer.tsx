@@ -14,7 +14,12 @@ const Footer = () => {
     <footer>
       <div className="footer">
         <div className="quote">{quotes[Math.floor(Math.random() * 5)]}</div>
-        <div className="info">{'<3 Webgruppa'}</div>
+        <div className="info">
+          {'<3 '}
+          <a href="https://org.ntnu.no/ogruppa/sportslig/arr/huoghei/wp-login.php">
+            Webgruppa
+          </a>{' '}
+        </div>
       </div>
     </footer>
   );
