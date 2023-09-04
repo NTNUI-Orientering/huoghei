@@ -1,0 +1,106 @@
+@import (reference) "../../utils/Colors.less";
+
+.dropdown {
+    position: relative;
+    background-color: @huoghei-white-background;
+    display: inline-block;
+    z-index: 1000;
+}
+
+.drop-button {
+    border: none;
+    outline: none;
+    color: inherit;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    padding: 16px 8px 14px 8px;
+    cursor: pointer;
+
+    .arrow-down {
+        border: solid @huoghei-darkgrey;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        margin-left: 6px;
+        margin-bottom: 4px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+    
+    .arrow-up {
+        border: solid @huoghei-darkgrey;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        margin-left: 6px;
+        margin-bottom: 0px;
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+}
+
+.drop-content {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    align-items: center;
+    width: fit-content;
+    display: none;
+    gap: 0.2rem;
+    width: inherit; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    z-index: 1000;
+    background-color: inherit;
+
+    &.show {
+        display: block;
+        visibility: visible;
+    }
+
+    .link {
+        padding: 0.3rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .drop-title {
+        gap: 0.2rem;
+        font-size: large;
+        font-weight: bold;
+    }
+}
+@media screen and (max-width: 550px) {
+
+    .drop-button {
+        font-size: large;
+        font-weight: bold;
+    }
+
+    .drop-content {
+        top: 0;
+        position: relative;
+        overflow: auto;
+        list-style-type: none;
+        right: 0;
+        display: none;
+        gap: 0.2rem;
+        width: inherit; 
+        flex-direction: column;
+        flex-wrap: wrap;
+        z-index: 1000;
+        background-color: inherit;
+
+        &.show {
+            display: block;
+        }
+
+        .link {
+            padding: 0.2rem;
+            width: 100%;
+            text-align: center;
+
+        }
+    }
+}

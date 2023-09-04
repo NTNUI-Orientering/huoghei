@@ -8,12 +8,12 @@ import { HH } from './CONSTS';
 import './App.less';
 import EntriesPage from './pages/Entries/EntriesPage';
 import Footer from './components/Footer/Footer';
-import Navbar3 from './components/Navbar/Navbar3';
+import Navbar from './components/Navbar/Navbar';
 
 const App = () => {
   return (
     <div className="app-container">
-      <Navbar3 />
+      <Navbar />
       <Routes>
         <Route path={HH.publicPath + '/'} element={<HomePage />}></Route>
         <Route path={HH.publicPath + '/hjem'} element={<HomePage />} />
