@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import PageLayout from '../PageLayout';
 import { HH } from '../../CONSTS';
@@ -283,7 +283,8 @@ const EntryPage: FC = () => {
                           Meld på{' '}
                         </button>
                         <p>
-                          Se <Link to={HH.publicPath+"/pamelding/pameldte"}>listen</Link> over påmeldte deltakere.
+                          Se <Link to={HH.publicPath + '/pamelding/pameldte'}>listen</Link> over
+                          påmeldte deltakere.
                         </p>
                       </Form>
                     </div>
@@ -300,7 +301,9 @@ const EntryPage: FC = () => {
                         <h5>Snuskeløpet</h5>
                         <ul className="list-group">
                           <li className="list-group-item">
-                            {'Vipps: ' + options?.paamelding_avgift_snusk + 'kr - Betales til nummer 726401'}
+                            {'Vipps: ' +
+                              options?.paamelding_avgift_snusk +
+                              'kr - Betales til nummer 726401'}
                           </li>
                           <li className="list-group-item">
                             {'Etteranmelding: ' +
@@ -311,11 +314,13 @@ const EntryPage: FC = () => {
                         <h5>Gampeløpet</h5>
                         <ul className="list-group">
                           <li className="list-group-item">
-                            {'Vipps: ' + options?.paamelding_avgift_gamp +
+                            {'Vipps: ' +
+                              options?.paamelding_avgift_gamp +
                               'kr - Betales til nummer 726401 '}
                           </li>
                           <li className="list-group-item">
-                            {'Vipps etter utgått påmeldingsfrist: ' + options?.paamelding_avgift_gamp_arena +
+                            {'Vipps etter utgått påmeldingsfrist: ' +
+                              options?.paamelding_avgift_gamp_arena +
                               'kr - Betales til nummer 726401 '}
                           </li>
                           <li className="list-group-item">
@@ -337,7 +342,8 @@ const EntryPage: FC = () => {
                 <div>
                   <p> Du er nå påmeldt. Takk for din registrering! </p>
                   <p>
-                    Se <Link to={HH.publicPath+"/pamelding/pameldte"}>listen</Link> over påmeldte deltakere.
+                    Se <Link to={HH.publicPath + '/pamelding/pameldte'}>listen</Link> over påmeldte
+                    deltakere.
                   </p>
                 </div>
               )
