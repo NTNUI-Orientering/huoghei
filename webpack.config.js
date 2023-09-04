@@ -13,6 +13,7 @@ module.exports = {
         index: "./src/index.tsx"
     },
     output: {
+        publicPath: "/",
         filename: '[name].bundle.js',
         path: __dirname + "/distribution",
     },

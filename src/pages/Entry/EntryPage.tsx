@@ -29,11 +29,6 @@ const EntryPage: FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  useEffect(() => {
-    //( Debug options )
-    //console.log(options);
-  }, [options]);
-
   const initialValues: FormValues = {
     name: '',
     club: '',
@@ -288,7 +283,7 @@ const EntryPage: FC = () => {
                           Meld på{' '}
                         </button>
                         <p>
-                          Se <Link to="/pamelding/pameldte">listen</Link> over påmeldte deltakere.
+                          Se <Link to={HH.publicPath+"/pamelding/pameldte"}>listen</Link> over påmeldte deltakere.
                         </p>
                       </Form>
                     </div>
@@ -305,31 +300,33 @@ const EntryPage: FC = () => {
                         <h5>Snuskeløpet</h5>
                         <ul className="list-group">
                           <li className="list-group-item">
-                            {options?.paamelding_avgift_snusk + 'kr (Kontant betaling på arena)'}
+                            {'Vipps: ' + options?.paamelding_avgift_snusk + 'kr - Betales til nummer 726401'}
                           </li>
                           <li className="list-group-item">
-                            {'Etteranmelding ' +
+                            {'Etteranmelding: ' +
                               options?.paamelding_avgift_snusk_etteranmelding +
-                              'kr (på arena fredag)'}
+                              'kr (Vipps på arena fredag)'}
                           </li>
                         </ul>
                         <h5>Gampeløpet</h5>
                         <ul className="list-group">
                           <li className="list-group-item">
-                            {options?.paamelding_avgift_gamp +
-                              'kr (nettbank). Betales til kontonr: ' +
-                              HH.kontonr +
-                              " (merk betalingen med 'Hu og Hei + navn')."}
+                            {'Vipps: ' + options?.paamelding_avgift_gamp +
+                              'kr - Betales til nummer 726401 '}
                           </li>
                           <li className="list-group-item">
-                            {'Kontant betaling: ' +
-                              options?.paamelding_avgift_gamp_arena +
-                              'kr (på arena lørdag)'}
+                            {'Vipps etter utgått påmeldingsfrist: ' + options?.paamelding_avgift_gamp_arena +
+                              'kr - Betales til nummer 726401 '}
+                          </li>
+                          <li className="list-group-item">
+                            {'Har du ikke Vipps? Forhåndsbetal i nettbank til kontonr: ' +
+                              HH.kontonr +
+                              ". Merk betalingen med 'Hu og Hei + DITT NAVN'."}
                           </li>
                           <li className="list-group-item">
                             {'Etteranmelding: ' +
                               options?.paamelding_avgift_gamp_etteranmelding +
-                              'kr (på arena lørdag)'}
+                              'kr (Vipps på arena lørdag)'}
                           </li>
                         </ul>
                       </div>
@@ -340,8 +337,7 @@ const EntryPage: FC = () => {
                 <div>
                   <p> Du er nå påmeldt. Takk for din registrering! </p>
                   <p>
-                    {' '}
-                    Se <Link to="/pamelding/pameldte">listen</Link> over påmeldte deltakere.
+                    Se <Link to={HH.publicPath+"/pamelding/pameldte"}>listen</Link> over påmeldte deltakere.
                   </p>
                 </div>
               )
