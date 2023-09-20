@@ -4,7 +4,7 @@ import PageLayout from '../PageLayout';
 import useFetchService from '../../services/FetchService';
 import Loader from '../../utils/Loader';
 import './EntriesPage.less';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 interface EntriesPage {
   apiAddress: string;
@@ -19,8 +19,9 @@ const EntriesPage: FC = () => {
   const [sortField, setSortField] = useState('registrert');
   const [sortOrder, setSortOrder] = useState('asc');
   const [year, setYear] = useState(new Date().getFullYear());
-  //console.log(year);
 
+  const [params, _] = useSearchParams();
+  const showAll = params.get('showAll') === 'true';
   const service = useFetchService(HH.getPaameldte + '?year=' + year);
 
   useEffect(() => {
@@ -34,8 +35,12 @@ const EntriesPage: FC = () => {
     { label: 'Klubb', accessor: 'klubb' },
     { label: 'Klasse', accessor: 'klasse' },
     { label: 'Antall fullført', accessor: 'antall' },
-    { label: 'Snuskeløpet', accessor: 'snusk' },
-    { label: 'Mat', accessor: 'mat' },
+    { label: 'Snuskeløpet', accessor: 'snusk' }
+  ];
+
+  // Columns that must be treated as private information
+  const privacyColumns = [
+    // { label: 'Mat', accessor: 'mat' },
     { label: 'Buss', accessor: 'buss' },
     { label: 'Forhåndsbetaling', accessor: 'forhandsbetaling' },
     { label: 'registrert', accessor: 'registrert' }
@@ -85,27 +90,33 @@ const EntriesPage: FC = () => {
               <caption></caption>
               <thead>
                 <tr>
-                  {columns.map(({ label, accessor }) => {
-                    const cn =
-                      sortField === accessor && sortOrder === 'asc'
-                        ? 'up'
-                        : sortField === accessor && sortOrder === 'desc'
-                        ? 'down'
-                        : 'default';
+                  {(showAll ? [...columns, ...privacyColumns] : columns).map(
+                    ({ label, accessor }) => {
+                      const cn =
+                        sortField === accessor && sortOrder === 'asc'
+                          ? 'up'
+                          : sortField === accessor && sortOrder === 'desc'
+                          ? 'down'
+                          : 'default';
 
-                    return (
-                      <th key={accessor} className={cn} onClick={() => handleColumnClick(accessor)}>
-                        {label}
-                      </th>
-                    );
-                  })}
+                      return (
+                        <th
+                          key={accessor}
+                          className={cn}
+                          onClick={() => handleColumnClick(accessor)}
+                        >
+                          {label}
+                        </th>
+                      );
+                    }
+                  )}
                 </tr>
               </thead>
               <tbody>
                 {paameldte.map((data: Paameldte, index: number) => {
                   return (
                     <tr key={index}>
-                      {columns.map(({ accessor }) => {
+                      {(showAll ? [...columns, ...privacyColumns] : columns).map(({ accessor }) => {
                         let tData = data[accessor] ? data[accessor] : '---';
                         if (['snusk', 'mat', 'buss', 'forhandsbetaling'].indexOf(accessor) >= 0) {
                           tData = tData === '1' ? 'Ja' : 'Nei';

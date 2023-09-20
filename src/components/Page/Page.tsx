@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import usePageService from '../../services/PageService';
 import Loader from '../../utils/Loader';
+import { decodeEntities } from '@wordpress/html-entities';
 import './Page.less';
 
 interface PageInterface {
@@ -18,11 +19,11 @@ const Page: FC<PageInterface> = ({ apiAddress }) => {
         {service.status === 'fetched' &&
           (Object.keys(service.payLoad).length ? (
             <div className="page-wrapper">
-              <h1 className="page-title">{service.payLoad.title.rendered}</h1>
+              <h1 className="page-title">{decodeEntities(service.payLoad.title.rendered)}</h1>
               <div
                 className="page-content"
                 dangerouslySetInnerHTML={{
-                  __html: service.payLoad.content.rendered
+                  __html: decodeEntities(service.payLoad.content.rendered)
                 }}
               />
             </div>

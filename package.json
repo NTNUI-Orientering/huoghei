@@ -48,7 +48,9 @@
     "webpack-image-srcset-loader": "^5.0.4"
   },
   "dependencies": {
+    "@wordpress/html-entities": "^3.42.0",
     "formik": "^2.2.9",
+    "html-entities": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-grid-system": "^8.1.6",

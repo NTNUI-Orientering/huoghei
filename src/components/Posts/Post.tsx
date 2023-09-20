@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { useLocation } from 'react-router-dom';
 import usePageService from '../../services/PageService';
 import Loader from '../../utils/Loader';
+import { decodeEntities } from '@wordpress/html-entities';
 import './Post.less';
 interface Post {
   apiAddress: string;
@@ -20,11 +21,11 @@ const Post: FC<Post> = ({ apiAddress }) => {
         {service.status === 'fetched' &&
           (Object.keys(service.payLoad).length ? (
             <div className="post-wrapper">
-              <h1 className="post-title">{service.payLoad.title.rendered}</h1>
+              <h1 className="post-title">{decodeEntities(service.payLoad.title.rendered)}</h1>
               <div
                 className="post-content"
                 dangerouslySetInnerHTML={{
-                  __html: service.payLoad.content.rendered
+                  __html: decodeEntities(service.payLoad.content.rendered)
                 }}
               />
             </div>
