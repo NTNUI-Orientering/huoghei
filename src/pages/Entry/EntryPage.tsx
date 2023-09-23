@@ -271,12 +271,13 @@ const EntryPage: FC = () => {
                           <Field id="prepayment" name="prepayment" type="checkbox" />
                           Jeg vil forhåndsbetale
                         </div>
-
-                        <label>Ønsker du å spise middag på hytta? ()</label>
+                        {/*
+                        <label>Ønsker du å spise middag på hytta? </label>
                         <div className="entry-form-checkbox">
                           <Field id="mat" name="mat" type="checkbox" />
                           Jeg ønsker middag på hytta
                         </div>
+                        */}
 
                         <label>Ønsker du transport til Studenterhytta? (50kr)</label>
                         <div className="entry-form-checkbox">

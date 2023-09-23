@@ -88,7 +88,7 @@ module.exports = {
         new MiniCssExtractPlugin(),
         new CopyPlugin({
             patterns : [{
-                from: "./public/.htaccess.txt"
+                from: "./public/.htaccess"
                 }
             ]
         })
