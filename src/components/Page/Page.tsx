@@ -13,12 +13,12 @@ const Page: FC<PageInterface> = ({ apiAddress }) => {
 
   return (
     <>
-      <div className="page-container">
+      <div className="pages-container">
         {service.status === 'loading' && <Loader />}
         {service.status === 'error' && <div> Noe gikk galt.</div>}
         {service.status === 'fetched' &&
           (Object.keys(service.payLoad).length ? (
-            <div className="page-wrapper">
+            <div className="pages-wrapper">
               <h1 className="page-title">{decodeEntities(service.payLoad.title.rendered)}</h1>
               <div
                 className="page-content"

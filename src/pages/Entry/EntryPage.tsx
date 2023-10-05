@@ -7,6 +7,7 @@ import './EntryPage.less';
 import { Link } from 'react-router-dom';
 import { useOptionsContext } from '../../hooks/OptionsContext';
 import CountDown from '../../components/Countdown/Countdown';
+import { parseDate } from '../../utils/Dates';
 
 interface FormValues {
   name: string;
@@ -83,7 +84,6 @@ const EntryPage: FC = () => {
   };
 
   const onSubmit = async (values: FormValues) => {
-    //console.log(values);
     setIsSubmitting(true);
     const urlParams = new URLSearchParams();
 
@@ -91,8 +91,6 @@ const EntryPage: FC = () => {
       const keyTyped = key as keyof typeof values;
       const value = values[keyTyped];
       urlParams.append(key, String(value));
-
-      //console.log(keyTyped, value);
     });
 
     const response = await fetch(HH.hostUrl + HH.registerRunner + '?' + urlParams, {
@@ -101,17 +99,11 @@ const EntryPage: FC = () => {
     });
 
     setIsSubmitting(false);
-    //console.log(response);
+
     if (response.ok) {
       setIsSubmitted(true);
       return;
     }
-  };
-
-  const getDate = (date: string) => {
-    const dat = new Date(date);
-    dat.setHours(0, 0, 0, 0);
-    return dat;
   };
 
   const getTodaysDate = () => {
@@ -139,22 +131,22 @@ const EntryPage: FC = () => {
 
               options &&
               options.paamelding_stenger &&
-              getDate(options.paamelding_stenger) < getTodaysDate() ? (
+              parseDate(options.paamelding_stenger) < getTodaysDate() ? (
                 <div>
-                  Påmelding stengte {getDate(options.paamelding_stenger).toLocaleDateString()}
+                  Påmelding stengte {parseDate(options.paamelding_stenger).toLocaleDateString()}
                 </div>
               ) : // Påmeldingsfristen åpner:
 
               options &&
                 options.paamelding_aapner &&
-                !(getDate(options.paamelding_aapner) <= getTodaysDate()) ? (
+                !(parseDate(options.paamelding_aapner) <= getTodaysDate()) ? (
                 <div>
-                  Påmelding til Hu og Hei {getDate(options.paamelding_aapner).getFullYear()} vil
+                  Påmelding til Hu og Hei {parseDate(options.paamelding_aapner).getFullYear()} vil
                   komme på denne siden.
                   <br />
                   <br />
                   Det vil bli åpnet for påmelding{' '}
-                  {getDate(options.paamelding_aapner).toLocaleDateString()}
+                  {parseDate(options.paamelding_aapner).toLocaleDateString()}
                 </div>
               ) : isSubmitting ? (
                 <Loader />
@@ -165,13 +157,13 @@ const EntryPage: FC = () => {
                     <div className="col">
                       <h3>
                         Påmeldingen til Hu og hei{' '}
-                        {options ? getDate(options.paamelding_aapner).getFullYear() : ''} er nå
+                        {options ? parseDate(options.paamelding_aapner).getFullYear() : ''} er nå
                         åpnet!
                       </h3>
                       <h4>
                         Påmeldingsfrist:{' '}
                         <span>
-                          {options && getDate(options.paamelding_stenger).toLocaleDateString()}
+                          {options && parseDate(options.paamelding_stenger).toLocaleDateString()}
                         </span>
                       </h4>
                       <Form className="entry-form">

@@ -13,7 +13,9 @@ const HomePage: FC = () => {
     <>
       <Carousel />
       <PageLayout>
-        {options?.paamelding_stenger && <CountDown endDateTime={options?.lopsdato} />}
+        {options?.paamelding_stenger && (
+          <CountDown endDateTime={options?.lopsdato} hour={9} minute={0} />
+        )}
         <News />
       </PageLayout>
     </>

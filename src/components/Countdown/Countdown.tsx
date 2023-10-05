@@ -4,10 +4,12 @@ import { useCountDown } from '../../hooks/CountdownHook';
 
 interface CountDownI {
   endDateTime: string;
+  hour?: number;
+  minute?: number;
 }
 
-const CountDown: FC<CountDownI> = ({ endDateTime }) => {
-  const [days, hours, minutes, seconds] = useCountDown(endDateTime);
+const CountDown: FC<CountDownI> = ({ endDateTime, hour, minute }) => {
+  const [days, hours, minutes, seconds] = useCountDown(endDateTime, hour, minute);
 
   return (
     <>

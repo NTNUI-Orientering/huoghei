@@ -1,11 +1,15 @@
 [
   {
     "option_name": "lopsdato",
-    "option_value": "2023-10-14"
+    "option_value": "2023-10-07"
   },
   {
     "option_name": "paamelding_aapner",
-    "option_value": "2023-01-01"
+    "option_value": "2023-10-03"
+  },
+  {
+    "option_name": "paamelding_stenger",
+    "option_value": "2023-10-04"
   },
   {
     "option_name": "paamelding_avgift_gamp",
@@ -30,9 +34,5 @@
   {
     "option_name": "paamelding_avgift_snusk_ettranmelding",
     "option_value": "150"
-  },
-  {
-    "option_name": "paamelding_stenger",
-    "option_value": "2023-10-12"
   }
 ]

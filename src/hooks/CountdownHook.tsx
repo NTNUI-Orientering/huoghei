@@ -1,9 +1,11 @@
 // Sheet that holds the logic for a countdown timer
+// TODO: Should use a library that are timezone-independent
 
 import { useState, useEffect } from 'react';
+import { parseDate } from '../utils/Dates';
 
-const useCountDown = (endDate: string) => {
-  const countDownDate = new Date(endDate).getTime();
+const useCountDown = (endDate: string, hours = 0, minutes = 0) => {
+  const countDownDate = parseDate(endDate).setHours(hours, minutes, 0, 0);
 
   const [countDown, setCountDown] = useState<number>(countDownDate - new Date().getTime());
 
